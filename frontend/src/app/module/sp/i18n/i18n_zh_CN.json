@@ -1,0 +1,13 @@
+{
+    "zh_CN": {
+        "userName": "用户名",
+        "email": "邮箱",
+        "mobile": "手机号码",
+        "country": "国家",
+        "language": "语言",
+        "tenantCode": "租户编码",
+        "currentBenity": "当前法人",
+        "theDepartmentInformation": "部门信息",
+        "theUserGroupInformation": "用户组信息"
+    }
+}

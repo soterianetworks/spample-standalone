@@ -1,0 +1,2 @@
+spase.client:
+  gatewayHost: ${GATEWAY_HOST}

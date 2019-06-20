@@ -1,0 +1,45 @@
+<ng-container *ngIf="currentUserProfile">
+    <div class="info-card">
+        {{'serviceAddress' | localize:lang}}: /gateway/iamsvc/my/user-profile
+    </div>
+    <p-panel header="{{'theBasicInformation'| localize:lang}}" [style]="{'margin-bottom': '10px'}">
+        <div class='ui-g ui-md-12'>
+            <div class="ui-md-1 ui-sm-4">
+                <app-form-label labelName="{{'userName' | localize:lang:'cip'}}: "></app-form-label>
+            </div>
+            <div class="ui-md-3 ui-sm-8">
+                {{currentUserProfile.userName}}
+            </div>
+            <div class="ui-md-1 ui-sm-4">
+                <app-form-label labelName="{{'email' | localize:lang:'cip'}}: "></app-form-label>
+            </div>
+            <div class="ui-md-3 ui-sm-8">
+                {{currentUserProfile.email}}
+            </div>
+            <div class="ui-md-1 ui-sm-4">
+                <app-form-label labelName="{{'mobile' | localize:lang:'cip'}}: "></app-form-label>
+            </div>
+            <div class="ui-md-3 ui-sm-8">
+                {{currentUserProfile.mobile}}
+            </div>
+            <div class="ui-md-1 ui-sm-4">
+                <app-form-label labelName="{{'language' | localize:lang:'cip'}}: "></app-form-label>
+            </div>
+            <div class="ui-md-3 ui-sm-8">
+                {{currentUserProfile.language}}
+            </div>
+            <div class="ui-md-1 ui-sm-4">
+                <app-form-label labelName="{{'tenantCode' | localize:lang:'cip'}}: "></app-form-label>
+            </div>
+            <div class="ui-md-3 ui-sm-8">
+                {{currentUserProfile.tenantCode}}
+            </div>
+        </div>
+    </p-panel>
+    <p-panel header="{{'theDepartmentInformation'| localize:lang:'cip'}}" [style]="{'margin-bottom': '10px'}">
+        {{getDepartmentInfo()}}
+    </p-panel>
+    <p-panel header="{{'theUserGroupInformation'| localize:lang:'cip'}}">
+        {{getUserGroupInfo()}}
+    </p-panel>
+</ng-container>

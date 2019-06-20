@@ -1,0 +1,51 @@
+plugins {
+    id "com.moowork.node" version "1.1.1"
+}
+
+node {
+    version = "${version_node}"
+    npmVersion = "${version_npm}"
+    download = node_download.toBoolean()
+    workDir = file("${project.rootDir}/.nodejs")
+    npmWorkDir = file("${project.rootDir}/.npm")
+    nodeModulesDir = file("${project.projectDir}")
+}
+
+task build(type: NpmTask) {
+    args = ['run','build']
+}
+
+task test(type: NpmTask) {
+    args = ['test']
+}
+
+task run(type: NpmTask) {
+    args = ['run', 'start']
+}
+
+run {
+    environment = [
+         'API_BASE_URL': System.getenv('API_BASE_URL') ?: 'http://www.shibgeek.com'
+        ,'CLIENT_ID': System.getenv('CLIENT_ID') ?: 'wmsview_webpack'
+    ]
+}
+
+task clean(type: NpmTask) {
+    args = ['run','clean']
+}
+
+task clobber(type: NpmTask) {
+    args = ['run','clobber']
+}
+
+task install(type: NpmTask) {
+    args = ['install']
+}
+
+npm_install {
+  args = ['--stacktrace']
+}
+
+npm_install.dependsOn(npm_cache_clean)
+build.dependsOn(npm_install)
+//build.finalizedBy(test)

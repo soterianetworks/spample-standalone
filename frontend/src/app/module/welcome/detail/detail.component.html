@@ -1,0 +1,92 @@
+<p-panel header="普通下拉框" [style]="{'margin-bottom': '10px'}">
+    <div class='ui-g ui-md-12'>
+        <div class="ui-md-4 ui-sm-8">
+            <app-smart-select
+                [(ngModel)]="commonSelectValue"
+                (dataSourceProvider)="commonSelectProvider($event)"
+                name="commonSelect">
+            </app-smart-select>
+        </div>
+    </div>
+</p-panel>
+
+<p-panel header="多选下拉框" [style]="{'margin-bottom': '10px'}">
+    <div class='ui-g ui-md-12'>
+        <div class="ui-md-4 ui-sm-8">
+            <app-smart-select
+                [(ngModel)]="multipleSelectValue"
+                (dataSourceProvider)="multipleSelectProvider($event)"
+                [viewIsMultiple]="true"
+                name="multipleSelect">
+            </app-smart-select>
+        </div>
+    </div>
+</p-panel>
+
+<p-panel header="搜索下拉框(前端查询)" [style]="{'margin-bottom': '10px'}">
+    <div class='ui-g ui-md-12'>
+        <div class="ui-md-4 ui-sm-8">
+            <app-smart-select
+                [(ngModel)]="filterSelectValue"
+                (dataSourceProvider)="filterSelectProvider($event)"
+                [viewSearchOptions]="{type: 'filter'}"
+                name="filterSelect">
+            </app-smart-select>
+        </div>
+    </div>
+</p-panel>
+
+<p-panel header="搜索下拉框(后端查询)" [style]="{'margin-bottom': '10px'}">
+    <div class='ui-g ui-md-12'>
+        <div class="ui-md-4 ui-sm-8">
+            <app-smart-select
+                [(ngModel)]="searchSelectValue"
+                (dataSourceProvider)="searchSelectProvider($event)"
+                [viewSearchOptions]="{type: 'search', keyword: 'searchKeyword'}"
+                name="searchSelect">
+            </app-smart-select>
+        </div>
+    </div>
+</p-panel>
+
+<p-panel header="表格下拉框" [style]="{'margin-bottom': '10px'}">
+    <div class='ui-g ui-md-12'>
+        <div class="ui-md-4 ui-sm-8">
+            <app-smart-select
+                [(ngModel)]="tableSelectValue"
+                (dataSourceProvider)="tableSelectProvider($event)"
+                [viewTableOptions]="{cols: [{'header': 'name', 'field': 'name'},{'header': 'code', 'field': 'code'}]}"
+                name="tableSelect">
+            </app-smart-select>
+        </div>
+    </div>
+</p-panel>
+
+<p-panel header="分页下拉框" [style]="{'margin-bottom': '10px'}">
+    <div class='ui-g ui-md-12'>
+        <div class="ui-md-4 ui-sm-8">
+            <app-smart-select
+                [(ngModel)]="pageSelectValue"
+                (dataSourceProvider)="pageSelectProvider($event)"
+                [viewPageOptions]="{'limitPerPage': 5, 'totalElements': '10'}"
+                name="pageSelect">
+            </app-smart-select>
+        </div>
+    </div>
+</p-panel>
+
+<p-panel header="综合下拉框">
+    <div class='ui-g ui-md-12'>
+        <div class="ui-md-4 ui-sm-8">
+            <app-smart-select
+                [(ngModel)]="comprehensiveSelectValue"
+                (dataSourceProvider)="comprehensiveSelectProvider($event)"
+                [viewPageOptions]="{'limitPerPage': 5, 'totalElements': '10'}"
+                [viewTableOptions]="{cols: [{'header': 'name', 'field': 'name'},{'header': 'code', 'field': 'code'}]}"
+                [viewSearchOptions]="{type: 'filter'}"
+                [viewIsMultiple]="true"
+                name="comprehensiveSelect">
+            </app-smart-select>
+        </div>
+    </div>
+</p-panel>

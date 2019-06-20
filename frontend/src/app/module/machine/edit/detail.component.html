@@ -1,0 +1,96 @@
+<ng-container *ngIf="object">
+    <div class="button-group-ui">
+        <app-form-button-group [isEdit]="isEdit"
+                               [theForm]="theForm"
+                               [enablePermissions]="false"
+                               (save)="save()"
+                               (delete)="delete()"></app-form-button-group>
+    </div>
+    <form #theForm="ngForm">
+        <p-panel header="{{'theBasicInformation'| localize:lang}}">
+            <div class="ui-md-12 ui-g">
+                <div class="ui-md-2 ui-sm-4">
+                    <app-form-label labelName="{{'code' | localize:lang:'machine'}}" required="true"></app-form-label>
+                </div>
+                <div class="ui-md-4 ui-sm-8">
+                    <label>
+                        <input type="text"
+                               [(ngModel)]="object.code"
+                               pInputText
+                               name="code"
+                               maxlength="128"
+                               #code="ngModel"
+                               required>
+                    </label>
+                    <app-validate-message [field]="code"></app-validate-message>
+                </div>
+
+                <div class="ui-md-2 ui-sm-4">
+                    <app-form-label labelName="{{'name' | localize:lang:'machine'}}" required="true"></app-form-label>
+                </div>
+                <div class="ui-md-4 ui-sm-8">
+                    <label>
+                        <input type="text"
+                               [(ngModel)]="object.name"
+                               pInputText
+                               #name="ngModel"
+                               name="name" maxlength="128" required>
+                    </label>
+                    <app-validate-message [field]="name"></app-validate-message>
+                </div>
+
+                <div class="ui-md-2 ui-sm-4">
+                    <app-form-label labelName="{{'model' | localize:lang:'machine'}}"></app-form-label>
+                </div>
+                <div class="ui-md-4 ui-sm-8">
+                    <label>
+                        <input type="text"
+                               [(ngModel)]="object.model"
+                               pInputText
+                               name="model"
+                               maxlength="128">
+                    </label>
+                </div>
+
+                <div class="ui-md-2 ui-sm-4">
+                    <app-form-label labelName="{{'brand' | localize:lang:'machine'}}"></app-form-label>
+                </div>
+                <div class="ui-md-4 ui-sm-8">
+                    <label>
+                        <input type="text"
+                               [(ngModel)]="object.brand"
+                               pInputText
+                               name="brand"
+                               maxlength="128">
+                    </label>
+                </div>
+
+                <div class="ui-md-2 ui-sm-4">
+                    <app-form-label labelName="{{'vendor' | localize:lang:'machine'}}"></app-form-label>
+                </div>
+                <div class="ui-md-4 ui-sm-8">
+                    <label>
+                        <input type="text"
+                               [(ngModel)]="object.vendor"
+                               pInputText
+                               name="vendor"
+                               maxlength="128">
+                    </label>
+                </div>
+
+                <div class="ui-md-2 ui-sm-4">
+                    <app-form-label labelName="{{'description' | localize:lang:'machine'}}"></app-form-label>
+                </div>
+                <div class="ui-md-4 ui-sm-8">
+                    <label>
+                        <input type="text"
+                               [(ngModel)]="object.description"
+                               pInputText
+                               name="description"
+                               maxlength="128">
+                    </label>
+                </div>
+            </div>
+        </p-panel>
+    </form>
+</ng-container>

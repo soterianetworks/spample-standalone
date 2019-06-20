@@ -1,0 +1,13 @@
+{
+    "en_US": {
+        "userName": "User Name",
+        "email": "Email",
+        "mobile": "Mobile",
+        "country": "Country",
+        "language": "Language",
+        "tenantCode": "Tenant Code",
+        "currentBenity": "Current Benity",
+        "theDepartmentInformation": "Department Information",
+        "theUserGroupInformation": "UserGroup Information"
+    }
+}
