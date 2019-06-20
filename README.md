@@ -8,7 +8,8 @@ Menu | Feature | Description
 ---|---|---
 Welcome | Show Components Usage | 
 CIP |  Current User Profile | Data from CIP service
-SP | Machine List | Data from SP service
+SP | Current User Profile | SP Spring Security Context
+Machines | Machine CRUD | 
 
 # Getting Started
 
