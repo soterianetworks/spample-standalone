@@ -61,14 +61,14 @@ spase.client:
 
 ## Start the server
 
-1. redis
+1. redis & mongodb
 
 ```shell
 cd env
 docker-compose up -d
 ```
 
-1. backend
+2. backend
 
 ```shell
 cd backend/standalone
@@ -76,7 +76,7 @@ gradle clean bootRun -PjvmArgs="-Dspring.profiles.active=development"
 ```
 
 
-2. frontend
+3. frontend
 
 ```shell
 cd frontend

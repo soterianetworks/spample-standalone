@@ -21,7 +21,9 @@ pipelines:
           script:
             - docker build --no-cache -f backend/standalone/docker/Dockerfile -t soterianetworks/spase:standalone --rm=true .
             - docker build --no-cache -f backend/standalone/docker/Dockerfile -t soterianetworks/spase:sped --rm=true .
+            - docker build --no-cache -f frontend/docker/Dockerfile -t soterianetworks/spase:frontend --rm=true .
             - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
             - docker push soterianetworks/spase:standalone
             - docker push soterianetworks/spase:sped
+            - docker push soterianetworks/spase:frontend
             - docker logout
