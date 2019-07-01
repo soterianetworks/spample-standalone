@@ -1,0 +1,33 @@
+security:
+  basic:
+    enabled: false
+
+info:
+  app:
+    name: spample-sp-managed
+
+server:
+  port: ${SERVER_PORT:80}
+
+eureka:
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOST:localhost}
+    non-secure-port: ${EUREKA_INSTANCE_PORT:80}
+    prefer-ip-address: false
+    instance-id: ${eureka.instance.hostname}:${eureka.instance.non-secure-port}:${random.value}
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULT_SERVICE_URL:'http://localhost:8761/eureka/'}
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/spample
+    redis:
+      repositories.enabled: false
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  profiles:
+    active: production

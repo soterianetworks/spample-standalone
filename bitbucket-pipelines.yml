@@ -1,0 +1,27 @@
+# Check our guides at https://confluence.atlassian.com/x/VYk8Lw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+image: docker:stable
+
+definitions:
+  services:
+    docker:
+      memory: 4096
+
+options:
+  docker: true
+
+pipelines:
+  branches:
+    image:
+      - step:
+          size: 2x
+          services:
+            - docker
+          script:
+            - docker build --no-cache -f backend/standalone/docker/Dockerfile -t soterianetworks/spase:standalone --rm=true .
+            - docker build --no-cache -f backend/standalone/docker/Dockerfile -t soterianetworks/spase:sped --rm=true .
+            - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+            - docker push soterianetworks/spase:standalone
+            - docker push soterianetworks/spase:sped
+            - docker logout

@@ -1,0 +1,19 @@
+apply plugin: 'org.springframework.boot'
+
+springBoot {
+    excludeDevtools = false
+}
+
+dependencies {
+    compile "org.springframework.cloud:spring-cloud-starter-eureka"
+
+    compile 'com.soterianetworks:spase-standalone-starter:0.9.20'
+
+    compile project(":application")
+}
+
+bootRun {
+    if (project.hasProperty('jvmArgs')) {
+        jvmArgs project.jvmArgs.split('\\s+')
+    }
+}

@@ -1,0 +1,17 @@
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+    compile 'io.github.openfeign:feign-core:10.2.3'
+    compile 'io.github.openfeign:feign-jackson:10.2.3'
+    compile 'io.github.openfeign:feign-okhttp:10.2.3'
+    compile 'io.github.openfeign:feign-slf4j:10.2.3'
+
+    compile 'com.soterianetworks:spase-standalone:0.9.20'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}

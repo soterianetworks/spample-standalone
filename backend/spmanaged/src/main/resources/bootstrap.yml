@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spample-sp-managed
+
+logging:
+  level:
+    root: INFO
+    feign: DEBUG

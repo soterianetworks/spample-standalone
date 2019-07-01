@@ -1,0 +1,7 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: ALWAYS
+
+spase.client:
+  gatewayHost: https://get_address_from_CIP_provider/gateway

@@ -1,6 +1,11 @@
 # Overview 
 
-The sample to show how a standalone SP is working with CIP.
+The sample to show how a SP is working with CIP.
+
+The SP might be
+
+* Standalone
+* SP Managed
 
 # Features
 
@@ -8,10 +13,9 @@ Menu | Feature | Description
 ---|---|---
 Welcome | Show Components Usage | 
 CIP |  Current User Profile | Data from CIP service
-SP | Current User Profile | SP Spring Security Context
-Machines | Machine CRUD | 
+SP | Machine List | Data from SP service
 
-# Getting Started
+# Standalone Getting Started 
 
 > First , please ask for a demo user and create the OAuth2 Application for the sample in CIP. 
 > For example :
@@ -27,7 +31,7 @@ Redirect UI | http:127.0.0.1:4200
 
 ## Configure the backend 
 
-> backend/src/main/resources/application-development.yml
+> backend/standalone/src/main/resources/application-development.yml
 
 ```yml
 spase.client:
@@ -67,7 +71,7 @@ docker-compose up -d
 1. backend
 
 ```shell
-cd backend
+cd backend/standalone
 gradle clean bootRun -PjvmArgs="-Dspring.profiles.active=development"
 ```
 

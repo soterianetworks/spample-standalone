@@ -1,1 +1,5 @@
-rootProject.name = 'spase-client-showcase'
+rootProject.name = 'com.soterianetworks.spample'
+include 'application'
+include 'standalone'
+include 'spmanaged'
+

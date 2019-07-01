@@ -1,0 +1,35 @@
+language: bash
+dist: xenial
+#language: java
+
+sudo: required
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+    - dev
+    - image
+
+jobs:
+  include:
+    - stage: deploy_standalone
+      script:
+        - docker build --no-cache -f backend/standalone/docker/Dockerfile -t soterianetworks/spase:standalone --rm=true .
+        - docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
+        - docker push soterianetworks/spase:standalone
+        - docker logout
+    - stage: deploy_spmanaged
+      script:
+        - docker build --no-cache -f backend/standalone/docker/Dockerfile -t soterianetworks/spase:sped --rm=true .
+        - docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
+        - docker push soterianetworks/spase:sped
+        - docker logout
+
+stages:
+  - name: deploy_standalone
+    if: branch = image
+  - name: deploy_spmanaged
+    if: branch = image

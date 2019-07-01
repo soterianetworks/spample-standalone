@@ -1,0 +1,2 @@
+spase.client:
+  gatewayHost: ${GATEWAY_HOST:https://get_address_from_CIP_provider/gateway}
