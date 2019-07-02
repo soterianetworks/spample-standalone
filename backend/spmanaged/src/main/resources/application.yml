@@ -1,3 +1,6 @@
+spase.client:
+  gatewayHost: ${GATEWAY_HOST}
+
 security:
   basic:
     enabled: false
@@ -18,16 +21,16 @@ eureka:
   client:
     registerWithEureka: true
     serviceUrl:
-      defaultZone: ${EUREKA_DEFAULT_SERVICE_URL:'http://localhost:8761/eureka/'}
+      defaultZone: ${EUREKA_DEFAULT_SERVICE_URL}
 
 spring:
   data:
     mongodb:
-      uri: mongodb://127.0.0.1:27017/spample
+      uri: ${MONGODB_URI:mongodb://127.0.0.1:27017/spample}
     redis:
       repositories.enabled: false
   redis:
-    host: 127.0.0.1
-    port: 6379
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_PORT:6379}
   profiles:
     active: production

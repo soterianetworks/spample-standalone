@@ -1,3 +1,7 @@
 spring:
   application:
-    name: spample-standalone
+    name: spample
+
+logging:
+  level:
+    root: INFO

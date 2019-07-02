@@ -1,2 +1,6 @@
-spase.client:
-  gatewayHost: ${GATEWAY_HOST:https://get_address_from_CIP_provider/gateway}
+eureka:
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOST:spample}
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULT_SERVICE_URL:'http://registry/eureka/'}
