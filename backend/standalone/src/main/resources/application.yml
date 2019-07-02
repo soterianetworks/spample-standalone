@@ -9,8 +9,6 @@ info:
 server:
   port: ${SERVER_PORT:80}
 
-feign.httpclient.enabled: false
-
 logging:
   level:
     root: INFO
@@ -19,11 +17,11 @@ logging:
 spring:
   data:
     mongodb:
-      uri: ${MONGODB_URI: mongodb://127.0.0.1:27017/spample}
+      uri: ${MONGODB_URI:mongodb://127.0.0.1:27017/spample}
     redis:
       repositories.enabled: false
   redis:
-    host: ${REDIS_HOST: 127.0.0.1}
-    port: ${REDIS_HOST: 6379}
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_HOST:6379}
   profiles:
     active: production
