@@ -1,5 +1,6 @@
 package com.soterianetworks.spase.sample.machine.service.impl;
 
+import com.soterianetworks.spase.sample.checking.service.CheckMachineService;
 import com.soterianetworks.spase.sample.machine.domain.Machine;
 import com.soterianetworks.spase.sample.machine.domain.MachineSearchRequest;
 import com.soterianetworks.spase.sample.machine.exception.MachineNotFoundException;
@@ -15,6 +16,9 @@ public class MachineServiceImpl implements MachineService {
 
     @Autowired
     private MachineRepository machineRepository;
+
+    @Autowired
+    private CheckMachineService checkMachineService;
 
     @Override
     public Page<Machine> listMachines(MachineSearchRequest searchRequest) {
@@ -54,5 +58,16 @@ public class MachineServiceImpl implements MachineService {
         }
         machineRepository.delete(existed);
         return existed;
+    }
+
+    @Override
+    public Machine generateMachineError(String id) {
+        Machine machine = machineRepository.findOne(id);
+        if (machine == null) {
+            throw new MachineNotFoundException("Machine not found");
+        }
+
+        checkMachineService.generateMachineError(machine);
+        return machine;
     }
 }

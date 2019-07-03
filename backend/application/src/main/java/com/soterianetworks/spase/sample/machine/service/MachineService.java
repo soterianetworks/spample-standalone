@@ -16,4 +16,6 @@ public interface MachineService {
 
     Machine deleteMachine(String id);
 
+    Machine generateMachineError(String id);
+
 }

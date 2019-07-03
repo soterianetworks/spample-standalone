@@ -42,8 +42,14 @@ public class MachineController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateMachine(@PathVariable("id") String id) {
+    public void deleteMachine(@PathVariable("id") String id) {
         machineService.deleteMachine(id);
+    }
+
+    @PutMapping("/{id}/error")
+    @ResponseStatus(HttpStatus.OK)
+    public Machine generateMachineError(@PathVariable("id") String id) {
+        return machineService.generateMachineError(id);
     }
 
 }
