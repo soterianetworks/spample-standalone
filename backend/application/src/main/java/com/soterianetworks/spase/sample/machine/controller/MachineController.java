@@ -24,13 +24,13 @@ public class MachineController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Machine listMachines(@PathVariable("id") String id) {
+    public Machine findMachineById(@PathVariable("id") String id) {
         return machineService.findMachineById(id);
     }
 
     @PostMapping()
     @ResponseStatus(HttpStatus.OK)
-    public Machine listMachines(@Valid @RequestBody Machine machine) {
+    public Machine createMachine(@Valid @RequestBody Machine machine) {
         return machineService.createMachine(machine);
     }
 
